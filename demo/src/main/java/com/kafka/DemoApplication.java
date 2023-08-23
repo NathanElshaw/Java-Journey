@@ -43,7 +43,8 @@ public class DemoApplication {
 
 	@KafkaListener(topics = "customer.visit")
 	public String listens(final String in) {
-		System.out.println(in);
+		final String user = UUID.randomUUID().toString();
+		System.out.println(user + " :" + in);
 		return in;
 	}
 }
