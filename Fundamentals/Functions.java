@@ -52,4 +52,74 @@ public class Functions {
  * 
  * Java comes with some predefined methods such as length(), toString() and
  * equals()
+ * 
+ * In Java you can also make your own classes such as evenOdd() or fooBar()
+ * 
+ * Static Methods:
+ * a method that contains the static keyword. or in other words it belongs to a
+ * class rather than a instance of a class
+ * 
+ * the main advantage is that we can call it without creating an object for
+ * example the public static main function
+ * 
+ * public class Display {
+ * public static void main(String[], args){
+ * show();
+ * }
+ * static void show()
+ * {
+ * System.out.println("This is a static method")
+ * } *}
+ * 
+ * Instance Method:
+ * The method class is know as an instance method is a non-static method defined
+ * in the class. Before calling or invoking the instance method
+ * 
+ * Ex:
+ * public class InstanceMethodExample {
+ * public static void main(String[], arg){
+ * InstanceMethodExample obj = new InstanceMethodExample()
+ * System.out.println("This sum is: "+obj.add(12,13))
+ * }
+ * public int add(int a, int b){
+ * s = a + b;
+ * return s;
+ * }
+ * }
+ * 
+ * there are 2 types of instance methods
+ * Accessor method:
+ * the method(s) that reads the instance variables is known as the accessor
+ * method.
+ * its ususally marked with the word get and is known as getters.
+ * Mutator method:
+ * The method(s) read the instance variable and also modifies them, they are
+ * usually marked with the word set
+ * and are known as setters or modifiers. They do not return anything. they
+ * accept the same parameter of the same data type that depends on the feild.
+ * its used to set the value of a private field
+ * 
+ * Abstract Method:
+ * The method that does not have a method body is known as an abstract method.
+ * in other words, without implementation id known as abstract method. it always
+ * declares in the abstract class. it means the class itself must be abstract if
+ * it has a abstract method. use the key word abstract
+ * 
+ * Ex:
+ * abstract class Demo {
+ * abstract void display();
+ * }
+ * 
+ * public class MyCLass extends Demo {
+ * void display()
+ * {
+ * System.out.println("Abstract Method?")
+ * }
+ * public static void main(String[], arg){
+ * Demo obj = new MyClass();
+ * 
+ * obj.display();
+ * }
+ * }
+ * 
  */
