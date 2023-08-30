@@ -34,4 +34,14 @@ public class DataStructures {
  * single run only
  * 
  * Ex: Trees and Graphs
+ * 
+ * Major Operations:
+ * Searching,
+ * Sorting
+ * Insertion
+ * Updation
+ * Deletion
+ * 
+ * we use data structures because they are boost effiency, add reusablility and
+ * abstraction
  */
