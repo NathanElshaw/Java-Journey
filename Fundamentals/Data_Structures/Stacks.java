@@ -1,7 +1,6 @@
 package Fundamentals.Data_Structures;
 
 public class Stacks {
-
 }
 
 /*
@@ -23,4 +22,26 @@ public class Stacks {
  * 
  * it is a data structure that follows some order to insert and delete the
  * elements, and that order can be LIFO or FILO.
+ */
+
+/*
+ * Standard Stack Operations:
+ * push(): When we insert an element in a stack then the operation. is known as
+ * a push. if the stack is full then the overflow condition occurs.
+ * 
+ * pop(): When we delete an element from the stack, the operation is known as a
+ * pop. if the stack is empty meaning no elements exist in the stack this state
+ * is known as an underflo state
+ * 
+ * isEmpty(): It determinds weather the stack is empty or not
+ * 
+ * isFull(): It determind if the stack is full or not.
+ * 
+ * peek(): it returns an element at the given position
+ * 
+ * count(): It returns the total number of elements available in a stack
+ * 
+ * change(): it changes the element at the given position.
+ * 
+ * display(): it prints all the elements in the stack.
  */
