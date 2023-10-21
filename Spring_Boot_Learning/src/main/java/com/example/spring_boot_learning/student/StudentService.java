@@ -1,9 +1,11 @@
 package com.example.spring_boot_learning.student;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -33,6 +35,35 @@ public class StudentService {
             throw new IllegalStateException("id " + id + "is not valid!");
         }
         studentRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void updateStudent(
+            Long id,
+            String name,
+            String email
+    ) {
+        Student student = studentRepository.findById(id)
+                .orElseThrow(() ->
+                        new IllegalStateException(
+                                "Student with id " + id + " does not exist"
+                        )
+                );
+        if (name != null &&
+                name.length() > 0 &&
+                !Objects.equals(student.getName(), name)) {
+            student.setName(name);
+        }
+        if (email != null &&
+                email.length() > 0 &&
+                !Objects.equals(student.getEmail(), email)) {
+            Optional<Student> optionalStudent = studentRepository.findStudentByEmail(email);
+            if (optionalStudent.isPresent()) {
+                throw new IllegalStateException("Email is already taken");
+            } else {
+                student.setEmail(email);
+            }
+        }
     }
 }
 
