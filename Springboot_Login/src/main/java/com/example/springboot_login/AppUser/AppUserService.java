@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class AppUserService implements UserDetailsService {
 
-    private final static String User_Not_Found_Message = "User with email %s not found"
+    private final static String User_Not_Found_Message = "User with email %s not found";
     private final  AppUserRepository appUserRepository;
 
     @Override
