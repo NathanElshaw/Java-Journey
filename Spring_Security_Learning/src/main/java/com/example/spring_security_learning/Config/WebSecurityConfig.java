@@ -17,7 +17,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         return http
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/greet").permitAll();//Open apis endpoints
+                    auth.requestMatchers("/greet/message").permitAll();//Open apis endpoints
                     auth.anyRequest().authenticated();//Secure all end points other than ones marked above.
                 })
                  .formLogin(withDefaults())
