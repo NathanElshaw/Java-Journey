@@ -36,8 +36,8 @@ public class AppUser implements UserDetails {
     private String password;
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
-    private Boolean isLocked;
-    private Boolean isEnabled;
+    private Boolean isLocked = false;
+    private Boolean isEnabled = false;
 
     public AppUser(String firstName,
                    String lastName,
@@ -53,6 +53,14 @@ public class AppUser implements UserDetails {
         this.appUserRole = appUserRole;
         this.isLocked = isLocked;
         this.isEnabled = isEnabled;
+    }
+
+    public AppUser(String firstName, String lastName, String email, String password, AppUserRole appUserRole) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.appUserRole = appUserRole;
     }
 
     @Override
