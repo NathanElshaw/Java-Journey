@@ -28,14 +28,15 @@ public class AppUserService implements UserDetailsService {
                 .findByEmail(appUser.getEmail()).isPresent();
         if(userExist){
             throw new IllegalStateException("Email already exist!");
+        } else{
+            String encodedPassword = bCryptPasswordEncoder
+                    .encode(appUser.getPassword());
+
+            appUser.setPassword(encodedPassword);
+
+            // Todo: Send confirm email and insert user
+            appUserRepository.save(appUser);
+            return "it works";
         }
-
-        String encodedPassword = bCryptPasswordEncoder
-                .encode(appUser.getPassword());
-
-        appUser.setPassword(encodedPassword);
-
-        // Todo: Send confirm email and insert user
-        return "it works";
     }
 }
