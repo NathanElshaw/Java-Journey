@@ -16,5 +16,4 @@ public class RegistrationController {
         return registrationService.register(userPayload);
     }
 
-
 }
