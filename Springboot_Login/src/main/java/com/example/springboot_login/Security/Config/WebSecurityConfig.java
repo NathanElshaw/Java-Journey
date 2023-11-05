@@ -28,7 +28,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
        return http
                .authorizeHttpRequests(auth -> {
-                   auth.requestMatchers("/api/v*/user/registration/**").permitAll();
+                   auth.requestMatchers("/error", "/api/v*/user/registration/**").permitAll();
                })
                .csrf(AbstractHttpConfigurer::disable)
                 .formLogin(withDefaults())

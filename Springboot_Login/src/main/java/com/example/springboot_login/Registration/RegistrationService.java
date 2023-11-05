@@ -41,25 +41,25 @@ public class RegistrationService {
     }
 
     public String confirmToken(String token){
-        ConfirmationToken confirmationToken = confirmationTokenService.getToken(token).orElseThrow(()->
-                new IllegalStateException("token not found")
-                );
+            ConfirmationToken confirmationToken = confirmationTokenService.getToken(token).orElseThrow(()->
+                    new IllegalStateException("token not found")
+            );
 
-        if(confirmationToken.getConfirmedAt() != null){
-            throw new IllegalStateException("email already confirmed");
-        }
+            if(confirmationToken.getConfirmedAt() != null){
+                throw new IllegalStateException("email already confirmed");
+            }
 
-        LocalDateTime expiresAt = confirmationToken.getExpiresAt();
+            LocalDateTime expiresAt = confirmationToken.getExpiresAt();
 
-        if(expiresAt.isBefore(LocalDateTime.now())){
-            throw new IllegalStateException("token is expired");
-        }
+            if(expiresAt.isBefore(LocalDateTime.now())){
+                throw new IllegalStateException("token is expired");
+            }
 
-        confirmationTokenService.setConfirmedAt(token);
-        appUserService.enableAppUser(
-                confirmationToken.getAppUser().getEmail()
-        );
-        return "confirmed";
+            confirmationTokenService.setConfirmedAt(token);
+            appUserService.enableAppUser(
+                    confirmationToken.getAppUser().getEmail()
+            );
+            return "confirmed";
     }
 
     private String buildEmail(String name, String link) {
