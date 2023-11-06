@@ -62,6 +62,11 @@ public class RegistrationService {
             return "confirmed";
     }
 
+    public String resendToken(String id){
+        //Todo add search for user -> then check to see if confirmed -> if not make new token and update expired at and created at;
+        return "";
+    }
+
     private String buildEmail(String name, String link) {
         return "<div style=\"font-family:Helvetica,Arial,sans-serif;font-size:16px;margin:0;color:#0b0c0c\">\n" +
                 "\n" +

@@ -21,4 +21,9 @@ public class RegistrationController {
         return registrationService.confirmToken(token);
     }
 
+    @PutMapping("registration/resend")
+    public String resendToken(@RequestParam("userId") String id){
+        return registrationService.resendToken(id);
+    }
+
 }
