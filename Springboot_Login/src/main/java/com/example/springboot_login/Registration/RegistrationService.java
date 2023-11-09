@@ -7,6 +7,7 @@ import com.example.springboot_login.Email.EmailSender;
 import com.example.springboot_login.Registration.Token.ConfirmationToken;
 import com.example.springboot_login.Registration.Token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -61,6 +62,13 @@ public class RegistrationService {
             );
             return "confirmed";
     }
+
+    public String resendConfirmToken(String email){
+        UserDetails user = appUserService.loadUserByUsername(email);
+        return "";
+
+    }
+
     private String buildEmail(String name, String link) {
         return "<div style=\"font-family:Helvetica,Arial,sans-serif;font-size:16px;margin:0;color:#0b0c0c\">\n" +
                 "\n" +
