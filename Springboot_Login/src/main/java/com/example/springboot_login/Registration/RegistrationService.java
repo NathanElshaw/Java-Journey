@@ -65,6 +65,7 @@ public class RegistrationService {
 
     public String resendConfirmToken(String email){
         UserDetails user = appUserService.loadUserByUsername(email);
+        System.out.println(user);
         return "";
 
     }
