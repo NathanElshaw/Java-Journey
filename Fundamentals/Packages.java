@@ -64,5 +64,13 @@ Using Static import:
                 }
                 Output: GeeksforGeeks
 
+Handling naming conflicts:
+The only we need to pay attention to packages is when we have a naming conflict. For example both, java.util and java.sql packages have a class named Date. So if we import both packages in program as follows:
+
+import java.util.*;
+import java.sql.*;
+
+The compiler wont know which one to use so it will throw an error
+
 
  */
